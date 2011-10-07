@@ -1,10 +1,11 @@
 <?php
 
 class CMSAdminEmailController extends AdminComponent {
-	public $module_name = "email";											
+	public $module_name = "email";
 	public $model_class = 'Client';
-	public $model_name = "client";													
+	public $model_name = "client";
 	public $display_name = "Email";
+  public $dashboard = false;
 	
 	public $scaffold_columns = array(
     "Subject"   =>array(),
@@ -24,9 +25,9 @@ class CMSAdminEmailController extends AdminComponent {
 	public static $base_permissions = array("enabled","menu");
 	public static $permissions = array('create');
 	
-	private function initialise() {
+	protected function initialise() {
 		parent::initialise();
-		if($this->model_class) {							
+		if($this->model_class) {
 			$this->model = new $this->model_class($this->cm_conf['ClientID']);
 		  $this->model_name = Inflections::underscore($this->model_class);
 	  }
