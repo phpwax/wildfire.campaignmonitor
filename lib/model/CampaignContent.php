@@ -9,7 +9,7 @@ class CampaignContent extends WaxModel {
 		$this->define("subject", "CharField", array('maxlength'=>255, 'editable'=>false) );		
 		$this->define("content", "TextField");
 		$this->define("date_created", "DateTimeField", array("editable"=>false));
-		$this->define("articles", "ManyToManyField", array('target_model'=>"CmsContent", 'editable'=>false, "eager_loading"=>true));
+		$this->define("articles", "ManyToManyField", array('target_model'=>"WildfireContent", 'editable'=>false, "eager_loading"=>true));
 		$this->define("url", "CharField");		
   }
 

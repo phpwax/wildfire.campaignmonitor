@@ -56,7 +56,7 @@ class Campaign extends CampaignMonitorModel {
 					if(!is_array($data['content_list'])) $articles = array(0=>$data['content_list']);
 					else $articles = $data['content_list'];				
 					foreach($articles as $story_id){
-						$cont = new CmsContent($story_id);
+						$cont = new WildfireContent($story_id);
 						$res->articles = $cont;
 					}
 				}
